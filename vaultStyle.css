@@ -1,0 +1,113 @@
+body {
+    background-color: rgb(66, 62, 66);
+    border: 0.2em ridge beige;
+    border-color: black;
+    color: aliceblue;
+    align-content: center;
+
+}
+/* More or less just color customization and alignment settigns for form, dialog, input, label, button and so on from here */
+form,dialog,section:last-of-type{
+    display: block;
+    margin: auto;
+    width: max-content;
+
+
+}
+h1:first-of-type{
+    color: rgb(4, 255, 0);
+    text-shadow: 0.1em 0.1em #000000;
+    padding-left: 42%;
+    font-size: 2.5em;
+    
+}
+/* Mass setting the font here, then going down in specificity of what does and does not share settings. */
+input,label,button,h1 {
+    font-family:'Courier New', Courier, monospace;
+    /* width: 6.5em; */
+    
+    
+}
+input,label,button {
+    border-color: black;
+    border: 2px ridge black;
+    font-size: small;
+}
+input,label {
+    width: 6.5em;
+    font-weight: 100;
+    color:rgb(22, 22, 50);
+    flood-color: rgb(77, 77, 77);
+    background-color: rgb(200, 202, 202);
+    caret-color: rgb(62, 62, 62);
+    outline-color: rgba(140, 255, 127, 0.59);
+    text-indent: 50%;
+    font-size: medium;
+    
+}
+button
+{
+    
+
+}
+
+#vaultVisual {
+    /* Justifying with flex and then center lets me stack because it's not mandating them in a row like with block, so this lets me stack them. */
+    display: flex;
+    justify-content: center;
+    img {
+        width: 25rem;
+    }
+    .onTopOfSafeBase {
+        position: absolute;
+        /* left: 1em; */
+        scale: 50%;
+
+    }
+    /* This is for the glitter text */
+    .onTopOfSafeBase:last-child
+    {
+        margin-top: 40%;
+
+    }
+    #dialTop {
+        scale: 40%;
+    }
+    #prizeInsideVault
+    {
+        visibility: hidden;
+    }
+}
+#hiddenCodeDialog {
+    background-color: transparent;
+    align-items: center;
+    border: 0px;
+    h2 {
+
+        text-wrap:pretty;
+        text-align: left;
+        width: 200px;
+    }
+    div {
+        background-image: url("SafeAssets/Page.png");
+        background-clip: padding-box;
+        padding: 15%;
+        background-size: auto;
+        /* background-position: 5%; */
+        background-repeat: no-repeat;
+
+
+    }
+}
+
+.vaultInputBox
+{
+    /* text-indent: 50%; */
+    height: 150%;
+    /* background-color: rgb(116, 111, 120); */
+
+}
+.vaultInputBox::placeholder
+{
+    color: rgb(75, 75, 78);
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vault</title>
+    <link rel="stylesheet" href="vaultStyle.css" />
+    <script src="vaultLogic.js" defer></script>
+  </head>
+  <body>
+    <article>
+      <h1>Vault</h1>
+      <div id="vaultVisual">
+        <img src="SafeAssets/SafeBase.png" id="safeBase" />
+        <img class = "onTopOfSafeBase" src="SafeAssets/DialButt.png" id="dialButt" />
+        <img class = "onTopOfSafeBase" src="SafeAssets/DialTop.png" id="dialTop" />
+        <img class = "onTopOfSafeBase" id="prizeInsideVault" src = "SafeAssets/YouDidItGlitterGif.gif">
+      </div>
+      <!-- The <form> is what makes the reset and submit buttons auto work. Other wise they do not know what to latch onto. -->
+      <form>
+        <section id="inputs">
+          <!-- I know placeholders are worse than labels, but I'm mimicking an old time-y lock feel here. So, inefficiency for art's sake lets go! 
+           
+          Future Alexis here: had to add in values so the js would not break from not having a value. 
+           
+          Added in min and max to prevent going over two digits while I'm here, as that's the most the code is.
+            -->
+          <input
+            class="vaultInputBox"
+            type="number"
+            id="key1"
+            min="0"
+            max="99"
+            placeholder="00"
+            value="0"
+          />
+          <input
+            class="vaultInputBox"
+            type="number"
+            id="key2"
+            min="0"
+            max="99"
+            placeholder="00"
+            value="0"
+          />
+          <input
+            class="vaultInputBox"
+            type="number"
+            id="key3"
+            min="0"
+            max="99"
+            placeholder="00"
+            value="0"
+          />
+        </section>
+        <section>
+          <!-- dummied reset out because yes, the internet is right, they are rarely useful and more often annoying. -->
+          <!-- <button type="reset">Reset</button> -->
+          <button type="button" id="tryCombo">Input Code</button>
+          <button type="button" id="showMsg">Double Check Secret Message</button>
+        </section>
+      </form>
+    </article>
+  </body>
+  <!-- Added in a way to pop up the secret code on screen and also play the alert again. This is a model dialog; it's neat though expected that javascript has this as well. I've worked with them in QT before, so it's pretty familiar logic wise. -->
+  <dialog id="hiddenCodeDialog">
+    <span>
+      <div>
+        <h2 id="codePopup">Secret Code:</h2>
+        <!-- This is the button to send the secret message alert with the full text again. It's a real mouthful, so I kept the full message in the alert. Which as the choices were between just the alert or a dialog box, I figure as long as one of those conforms to it, then I should be fine to have the dialog box itself just have the code. But if it's not, then don't worry, I decided to impliment in a button to conform it to the rubric by just -->
+        <button type="button" id="sendAlert">Resend Initial Alert</button>
+        <button type="button" id="toggleRubricConformance">Conform Dialog To Rubric</button>
+      </div>
+    </span>
+  </dialog>
+</html>
